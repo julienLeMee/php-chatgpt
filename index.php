@@ -14,6 +14,7 @@
 
   function callOpenAI($message) {
     $openai_endpoint = "https://api.openai.com/v1/chat/completions";
+    $openai_token = $_ENV['OPEN_AI_KEY'];
   }
 
 ?>
