@@ -15,6 +15,22 @@
   function callOpenAI($message) {
     $openai_endpoint = "https://api.openai.com/v1/chat/completions";
     $openai_token = $_ENV['OPEN_AI_KEY'];
+
+    $data = array(
+      "model" => "gpt-3.5-turbo",
+      "messages" => array(
+        array(
+          "role" => "system",
+          "content" => "Vous parlez avec ChatGPT."
+        ),
+        array(
+          "role" => "user",
+          "content" => $message
+        )
+      ),
+      "max_tokens" => 100,
+      "temperature" => 0.7,
+    );
   }
 
 ?>
